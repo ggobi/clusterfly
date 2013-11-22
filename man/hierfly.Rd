@@ -1,0 +1,34 @@
+\name{hierfly}
+\alias{hierfly}
+\title{Visualisig hierarchical clustering.
+This method supplements a data set with information needed to draw a
+dendrogram}
+\usage{
+  hierfly(data, metric = "euclidean", method = "average")
+}
+\arguments{
+  \item{data}{data set}
+
+  \item{metric}{distance metric to use, see
+  \code{\link{dist}} for list of possibilities}
+
+  \item{method}{cluster distance measure to use, see
+  \code{\link{hclust}} for details}
+}
+\value{
+  object of type, hierfly
+}
+\description{
+  Intermediate cluster nodes are added as needed, and
+  positioned at the centroid of the combined clusters.
+}
+\examples{
+h <- hierfly(iris)
+ggobi(h)
+h <- hierfly(iris, method="single")
+}
+\seealso{
+  \code{\link{cut.hierfly}}, \code{\link{ggobi.hierfly}}
+}
+\keyword{cluster}
+
